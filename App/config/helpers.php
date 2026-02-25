@@ -3,6 +3,25 @@
 //comienzo de sesión, tenemos que ejecutarlo antes de crear y usar las variables de sesión.
 session_start();
 
+//recibir el valor del parámetro y comproba si es vacio o no, y devolver true si est vacío o y falde en caso contrario
+function comprobarVacio($param1){
+    if(empty($param1)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+// Una función para comparar si es mayor que un valor y menor que otro valor y devolver false si no cumple esa condición y true si la cumple
+function comprobarCaracteres($campo, $min, $max){
+    $caracteres = strlen($campo);
+    if($caracteres<$min || $caracteres>$max){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 // Función para validar si un correo tiene la forma o estructura de un correo adecuada
 // La función devuelve true si es correcto, o false si no coincide con la expresión regular con la que se compara.
 function validar_email($valorRecibido) {    
@@ -11,6 +30,64 @@ function validar_email($valorRecibido) {
     return preg_match($regex, $valorRecibido);
     // Me devolverá false si hay error
     // Me devolverá true si NO hay error (si coincide la estructura )
+}
+
+function enviarRespuestaAsincrona($mensaje, $fallo, $campo){
+
+    // creación de array asociativo
+    $arrayRespuesta = array(
+        "mensaje" => $mensaje,
+        "fallo" => $fallo,
+        "campo" => $campo
+    );
+
+    // crear un json del array
+    $jsonDelArray = json_encode($arrayRespuesta);
+
+    //devolvemos el json al cliente
+    echo $jsonDelArray;
+    die;
+}
+// Función para obtener las rutas equivalentes en los demás idiomas a través del índice de la ruta actual dentro del array de rutas. Devuelve un array con las rutas equivalentes en cada idioma, o null si no existe esa ruta en ese idioma.
+function getRutasEquivalentesPorIndice(string $url, array $arrayRutasGet): array
+{
+    // Inicializamos el resultado con todos los idiomas a null
+    $resultado = [];
+    foreach ($arrayRutasGet as $lang => $rutas) {
+        $resultado[$lang] = null;
+    }
+ 
+    // 1) Detectar idioma origen (dónde existe la URL actual)
+    $idiomaOrigen = null;
+    foreach ($arrayRutasGet as $lang => $rutas) {
+        if (array_key_exists($url, $rutas)) {
+            $idiomaOrigen = $lang;
+            break;
+        }
+    }
+ 
+    // Si no existe la URL en ningún idioma, devolvemos nulls
+    if ($idiomaOrigen === null) {
+        return $resultado;
+    }
+ 
+    // 2) Sacar índice/posición de esa URL dentro del idioma origen
+    $clavesOrigen = array_keys($arrayRutasGet[$idiomaOrigen]);
+    $indice = array_search($url, $clavesOrigen, true);
+ 
+    if ($indice === false) {
+        return $resultado;
+    }
+ 
+    // 3) Recorrer todos los idiomas y coger la ruta homóloga por posición
+    foreach ($arrayRutasGet as $lang => $rutas) {
+        $clavesIdioma = array_keys($rutas);
+        if (isset($clavesIdioma[$indice])) {
+            $resultado[$lang] = $clavesIdioma[$indice];
+        }
+    }
+ 
+    return $resultado;
 }
 
 // Función que se ejecuta cuando localizamos un error en el backend del formulario por no cumplimentar algún campo de forma correcta.

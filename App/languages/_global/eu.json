@@ -1,0 +1,97 @@
+{
+    "menu_inicio": "Hasiera",
+    "menu_title_inicio": "Hasierako orria",
+    "ruta_inicio": "/eu",
+
+    "menu_quienes_somos": "Guri buruz",
+    "menu_title_quienes_somos": "Zure okinak eta gozogileak Aginagan",
+    "ruta_quienes_somos": "/eu/guri-buruz",
+
+    "menu_productos": "Produktuak",
+    "menu_title_productos": "Gure ogi, pastel eta torrija onenak",
+    "ruta_productos": "/eu/produktuak",
+
+    "menu_panaderia": "Okindegia",
+    "menu_title_panaderia": "Ogirik onenak",
+    "ruta_panaderia": "/eu/produktuak/okindegia",
+
+    "menu_pasteleria": "Gozotegia",
+    "menu_title_pasteleria": "Gozogintza artisaua",
+    "ruta_pasteleria": "/eu/produktuak/goxotegia",
+
+    "menu_torrijas": "Torrijak",
+    "menu_title_torrijas": "Gipuzkoako torrijarik onenak",
+    "ruta_torrijas": "/eu/produktuak/torrijak",
+
+    "menu_contacto": "Kontaktua",
+    "menu_title_contacto": "Panaderia Aginagarekin harremanetan",
+    "ruta_contacto": "/eu/kontaktua",
+
+    "menu_zona_admin": "Admin Gunea",
+    "menu_login": "Saioa hasi",
+    "menu_title_zona_admin": "Eremu pribatua",
+    "ruta_zona_admin": "/eu/admin-gunea",
+
+    "menu_logout": "Saioa itxi",
+    "menu_title_logout": "Irten",
+    "ruta_logout": "/eu/logout",
+
+    "nav_logo_alt": "Panaderia Aginagaren logotipoa",
+    "nav_logo_title": "Panaderia Aginaga",
+    "label_lang_eu": "eu",
+    "label_lang_es": "es",
+
+    "footer_url_portfolio": "https://profe.webda.eus/",
+    "footer_title_portfolio": "Portfolio orokorra",
+    "footer_text_portfolio": "Portfolio orokorra",
+
+    "footer_url_academia": "https://www.areafor.com/",
+    "footer_title_academia": "Area akademia",
+    "footer_text_academia": "Area akademia",
+
+    "rrss_url_facebook": "",
+    "rrss_title_facebook": "Panaderia Aginagaren Facebooka",
+    "rrss_alt_facebook": "Panaderia Aginagaren Facebooka",
+
+    "rrss_url_linkedin": "https://www.linkedin.com/in/igor-aranaz-pastor/",
+    "rrss_title_linkedin": "Bisita ezazu gure LinkedIn",
+    "rrss_alt_linkedin": "Bisita ezazu gure LinkedIn",
+
+    "rrss_url_instagram": "",
+    "rrss_title_instagram": "Panaderia Aginagaren Instagram",
+    "rrss_alt_instagram": "Panaderia Aginagaren Instagram",
+
+    "rrss_url_youtube": "https://www.youtube.com/@LiquidArtDevelopers",
+    "rrss_title_youtube": "Panaderia Aginagaren YouTube",
+    "rrss_alt_youtube": "Panaderia Aginagaren YouTube",
+
+    "contact_url_tel": "tel:+34943123123",
+    "contact_title_tel": "Deitu 943 123 123 zenbakira",
+    "contact_text_tel": "943 123 123",
+
+    "contact_url_whatsapp": "https://api.whatsapp.com/send/?phone=34628749350",
+    "contact_title_whatsapp": "Idatzi WhatsApp bidez 600 123 123 zenbakira",
+    "contact_text_whatsapp": "600 123 123",
+
+    "contact_url_email": "mailto:aranaz@gmail.com",
+    "contact_title_email": "Bidali mezu bat helbide honetara: correo@correo.com",
+    "contact_text_email": "correo@correo.com",
+
+    "contact_url_direccion": "https://maps.app.goo.gl/EB3bPiGW1yfoJg3p9",
+    "contact_title_direccion": "Donostian gaude, Paseo Portuetxe 23b, 413 Donostia helbidean",
+    "contact_text_direccion_linea1": "Paseo Portuetxe 23b",
+    "contact_text_direccion_linea2": "413 Donostia",
+
+    "footer_logo_alt": "Panaderia Aginagaren logotipoa",
+    "footer_logo_title": "Panaderia Aginaga",
+    "footer_desc": "1932tik, Panaderia Aginagan egunero egiten ditugu artisau ogiak eta tokiko lehen mailako osagaiekin prestatutako gozogintza tradizionala. Zatoz bisitan eta ezagutu gure espezialitate berriak.",
+
+    "ruta_terminos_legal": "/eu/legezko-terminoak#legalZona",
+    "ruta_terminos_cookies": "/eu/legezko-terminoak#cookiesZona",
+    "ruta_terminos_privacidad": "/eu/legezko-terminoak#privacidadZona",
+
+    "footer_legal": "Legezko oharra",
+    "footer_cookies": "Cookien kudeaketa",
+    "footer_privacidad": "Pribatutasun politika",
+    "footer_copyright": "Eskubide guztiak erreserbatuak"
+}

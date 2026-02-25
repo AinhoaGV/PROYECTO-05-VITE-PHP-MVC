@@ -7,83 +7,112 @@ $langs = ['es', 'eu'];
 $arrayRutasGet = [
     'es' => [
         '/es' => [
-            'view'      => '/views/es/inicio.php' 
+            'view'      => '/views/inicio.php',
+            'content'   => 'inicio'
         ],
         '/es/sobre-nosotros' => [
-            'view'      => '/views/es/quienesSomos.php'
+            'view'      => '/views/quienesSomos.php',
+            'content'   => 'quienesSomos'
         ],
         '/es/productos' => [
-            'view'      => '/views/es/productos.php'
+            'view'      => '/views/productos.php',
+            'content'   => 'productos'
         ],
         '/es/contacto' => [
-            'view'      => '/views/es/contacto.php'
+            'view'      => '/views/contacto.php',
+            'content'   => 'contacto'
         ],
 
         '/es/showroom' => [
-            'view'      => '/views/templates.php'
+            'view'      => '/views/templates.php',
+            'content'   => 'showroom'
         ],
         '/es/terminos-legales' => [
-            'view'      => '/views/es/terminos.php'
+            'view'      => '/views/terminos.php',
+            'content'   => 'terminos'
         ],
         '/es/gracias' => [
-            'view'      => '/views/es/gracias.php'
+            'view'      => '/views/gracias.php',
+            'content'   => 'gracias'
         ],
         
         '/es/productos/panaderia' => [
-            'view'      => '/views/es/producto.php'
+            'view'      => '/views/producto.php',
+            'content'   => 'panaderia'
         ],
         '/es/productos/pasteleria' => [
-            'view'      => '/views/es/producto.php'
+            'view'      => '/views/producto.php',
+            'content'   => 'pasteleria'
         ],
         '/es/productos/torrijas' => [
-            'view'      => '/views/es/producto.php'
+            'view'      => '/views/producto.php',
+            'content'   => 'torrijas'
         ],
         '/es/zona-admin' => [
-            'view'      => '/views/es/zonaAdmin.php'
+            'view'      => '/views/zonaAdmin.php',
+            'content'   => 'zonaAdmin'
         ],
         '/es/logout' => [
-            'view'      => '/views/es/logout.php'
+            'view'      => '/views/logout.php',
+            'content'   => 'logout'
         ],
         '/es/registro' => [
-            'view'      => '/views/es/logup.php'
+            'view'      => '/views/logup.php',
+            'content'   => 'logup'
         ],
     ],
     'eu' => [
         '/eu' => [
-            'view'      => '/views/eu/inicio.php'
+            'view'      => '/views/inicio.php',
+            'content'   => 'inicio'
         ],
         '/eu/guri-buruz' => [
-            'view'      => '/views/eu/quienesSomos.php'
+            'view'      => '/views/quienesSomos.php',
+            'content'   => 'quienesSomos'
         ],
         '/eu/produktuak' => [
-            'view'      => '/views/eu/productos.php'
+            'view'      => '/views/productos.php',
+            'content'   => 'productos'
         ],
         '/eu/kontaktua' => [
-            'view'      => '/views/eu/contacto.php'
+            'view'      => '/views/contacto.php',
+            'content'   => 'contacto'
+        ],
+        '/eu/showroom' => [
+            'view'      => '/views/templates.php',
+            'content'   => 'showroom'
         ],
         '/eu/legezko-terminoak' => [
-            'view'      => '/views/eu/terminos.php'
+            'view'      => '/views/terminos.php',
+            'content'   => 'terminos'
         ],
         '/eu/eskerrikasko' => [
-            'view'      => '/views/eu/gracias.php'
+            'view'      => '/views/gracias.php',
+            'content'   => 'gracias'
         ],
         '/eu/produktuak/okindegia' => [
-            'view'      => '/views/eu/producto.php'
+            'view'      => '/views/producto.php',
+            'content'   => 'panaderia'
         ],
         '/eu/produktuak/goxotegia' => [
-            'view'      => '/views/eu/producto.php'
+            'view'      => '/views/producto.php',
+            'content'   => 'pasteleria'
         ],
         '/eu/produktuak/torrijak' => [
-            'view'      => '/views/eu/producto.php'
+            'view'      => '/views/producto.php',
+            'content'   => 'torrijas'
         ],
         '/eu/admin-gunea' => [
-            'view'      => '/views/eu/zonaAdmin.php'
+            'view'      => '/views/zonaAdmin.php',
+            'content'   => 'zonaAdmin'
         ],
         '/eu/logout' => [
-            'view'      => '/views/eu/logout.php'
+            'view'      => '/views/logout.php',
+            'content'   => 'logout'
         ],
         '/eu/erregistroa' => [
-            'view'      => '/views/eu/logup.php'
+            'view'      => '/views/logup.php',
+            'content'   => 'logup'
         ],
     ]
 ];
@@ -98,6 +127,12 @@ $arrayRutasPost = [
     ],
     '/app/gestionFormLogup' => [
         'view' => '/app/gestionFormLogup.php',
+    ],
+    '/app/artForm02' => [
+        'view' => '/app/artForm02.php',
+    ],
+    '/app/artForm03' => [
+        'view' => '/app/artForm03.php',
     ],
 ];
 

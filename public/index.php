@@ -95,9 +95,24 @@ if ($url != "/") {
 // FASE 3 - UNA VEZ TENEMOS LA $URL DEL USUARIO, Y TENEMOS EL IDIOMA DE LA URL EN $LANG, COMPROBAMOS SI EXISTE ESA URL EN ESE IDIOMA CONSULTANDO EL ARRAY DE URL
 if (isset($arrayRutasGet[$lang][$url])) {
 
+    $urlMultilangs = getRutasEquivalentesPorIndice($url, $arrayRutasGet);
+
 
     // Si la url existe dentro del array de url's, entonces cogemos el valor de view, que es el archivo que haremos include para cargar el contenido pertienente de esta url.
     $view = $arrayRutasGet[$lang][$url]['view']; 
+
+    // Cogemos el valor del conten, que es el nombre de la carpeta dentro de languages, que hace referencia al copy que corresponde a la url y en el idioma correspondiente
+    $content = $arrayRutasGet[$lang][$url]['content'];    
+    
+    // ----CARGAMOS LAS VARIABLES GLOBALES
+    //Extraemos del json todas las claves valores globales, que son las que se repiten en todas las páginas, como el menú, el footer, etc. Estas variables globales estarán disponibles en todas las vistas.    
+    $data1 = (array) json_decode(file_get_contents($appRoot . "/languages/_global/$lang.json"));
+    $data1 && extract($data1); //cortocircuito si $data es true, hacemos extract de data: todas las claves del json las pasamos a variable php
+     
+    // ----CARGAMOS LAS VARIABLES OBJETO
+    //Extraemos del json todas las claves valores de esa ruta, ya en variables php
+    $data = (array) json_decode(file_get_contents($appRoot . "/languages/$content/$lang.json"));
+    $data && extract($data); //cortocircuito si $data es true, hacemos extract de data: todas las claves del json las pasamos a variable php
      
     
     //----VISTA----------
@@ -116,7 +131,7 @@ if (isset($arrayRutasGet[$lang][$url])) {
         $lang = $_ENV['LANG_DEFAULT'];
     }
     http_response_code(404);
-    require_once $appRoot . "/views/$lang/404.php";
+    require_once $appRoot . "/views/404.php";
 
     /* 
     AQUÍ SE CARGARÁ TODO EL HTML DEL 404

@@ -1,0 +1,17 @@
+{
+    "title": "Registro",
+    "meta_description": "Registro de usuarios de Panaderia Aginaga",
+    "hero_h1": "Registro",
+    "label_nombre": "Nombre *",
+    "placeholder_nombre": "* Escribe tu nombre",
+    "label_correo": "Correo *",
+    "placeholder_correo": "* Escribe tu correo",
+    "label_pass": "Contrasena *",
+    "placeholder_pass": "Contrasena",
+    "label_pass2": "Repetir contrasena *",
+    "placeholder_pass2": "Repetir contrasena",
+    "label_aceptar": "Aceptar",
+    "label_terminos_link": "terminos y condiciones de privacidad",
+    "submit": "ENVIAR",
+    "campos_obligatorios": "* Campos obligatorios"
+}

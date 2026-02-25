@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- NAV -->
-    <?php include $appRoot . '/includes/es/nav.php' ?>
+    <?php include $appRoot . '/includes/nav.php' ?>
 
 
     <!-- HERO01 -->
@@ -42,7 +42,7 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
                             <a href="" class="moduloBoton01">
                                 <span>Leer más</span>
-                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                             </a>
                         </div>
                         <div class="card">
@@ -51,13 +51,13 @@
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iusto ipsam quam porro, rem non nulla distinctio eligendi id possimus.</p>
                             <a href="" class="moduloBoton01">
                                 <span>Leer más</span>
-                                <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                             </a>
                         </div>
                     </div>
                     <a href="" class="moduloBoton02">
                         <span>Contacta con nosotros</span>
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                     </a>
                 </div>
                 <!-- hijo 2 -->
@@ -78,28 +78,28 @@
                 <ul>
                     <li>
                         <a href="tel:+34943123123" title="Llámanos al 943 123 123" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/call.svg" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20"> 
+                            <img src="<?=$_ENV['RUTA'];?>/assets/img/system/call.svg" alt="Llámanos al 943 123 123" title="Llámanos al 943 123 123" width="20" height="20"> 
                             <span>943 123 123</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="https://api.whatsapp.com/send/?phone=34628749350" title="Escríbenos al whatsapp 600 123 123" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/logo-whatsapp.svg" alt="Escríbenos al whatsapp 600 123 123" title="Escríbenos al whatsapp 600 123 123" width="20" height="20"> 
+                            <img src="<?=$_ENV['RUTA'];?>/assets/img/system/logo-whatsapp.svg" alt="Escríbenos al whatsapp 600 123 123" title="Escríbenos al whatsapp 600 123 123" width="20" height="20"> 
                             <span>600 123 123</span>
                         </a>
                     </li>       
 
                     <li>
                         <a href="mailto:aranaz@gmail.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/mail.svg" alt="Mándanos un correo a la siguiente dirección correo@correo.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" width="20" height="20"> 
+                            <img src="<?=$_ENV['RUTA'];?>/assets/img/system/mail.svg" alt="Mándanos un correo a la siguiente dirección correo@correo.com" title="Mándanos un correo a la siguiente dirección correo@correo.com" width="20" height="20"> 
                             <span>correo@correo.com</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="https://maps.app.goo.gl/EB3bPiGW1yfoJg3p9" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" target="_blank">
-                            <img src="<?=$_ENV['RUTA']?>/assets/img/system/location.svg" alt="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" width="20" height="20"> 
+                            <img src="<?=$_ENV['RUTA'];?>/assets/img/system/location.svg" alt="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" title="Estamos en Donostia en la dirección Paseo Portuetxe 23b, 413 Donostia" width="20" height="20"> 
                             <span>Paseo Portuetxe 23b<br>413 Donostia</span>
                         </a>
                     </li>
@@ -127,7 +127,7 @@
                     <!-- <a href="" class="boton">CTA</a> -->
                     <a href="" class="moduloBoton02">
                         <span>Conócenos</span>
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                     </a>
                 </div>
             </article>
@@ -141,7 +141,7 @@
                     <!-- <a href="" class="boton">Más info</a> -->
                     <a href="" class="moduloBoton02">
                         <span>Más información</span>
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/arrow-forward-outline.svg" alt="" title="">
                     </a>
                 </div>
 
@@ -160,21 +160,21 @@
                     <p>Nuestra carta de productos se actualiza cada estación, pero se fundamenta en tres pilares que definen nuestra identidad. En primer lugar, el <b>pan de masa madre</b> que fermenta durante 24 horas, desarrollando una corteza crujiente y un alveolado irregular lleno de sabor y nutrientes: es el favorito de quienes nos buscan como “<b>panadería en Aginaga</b>” o “<b>pan masa madre en Usurbil</b>”. En segundo lugar, nuestros <b>pasteles artesanos</b>, elaborados con mantequilla y huevos de caserío, sin aromas artificiales, con rellenos de temporada como crema de avellana de Navarra o compota de manzana reineta. Finalmente, las <b>torrijas</b>, inspiradas en la receta de la amona pero disponibles todo el año; las servimos con miel de azahar o con un delicado almíbar de vainilla bourbon que las hace inolvidables. Cada producto cuenta con su propio proceso cuidadoso, fichas de alérgenos actualizadas y la posibilidad de <b>reserva online</b> para que llegues y lo tengas listo. Además, nuestras famosas <b>torrijas de Aginaga</b> pueden reservarse en línea para cualquier celebración, destacando nuestra <b>panadería en Aginaga</b> como la opción preferida para un dulce tradicional.</p>
                     <a href="./productos-panaderia.php" class="moduloBoton02">
                         <span>Más información</span>
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/system/arrow-forward-outline.svg" alt="Ir a Nuestros productos" title="Más información">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/arrow-forward-outline.svg" alt="Ir a Nuestros productos" title="Más información">
                     </a>
                 </div>
 
                 <div class="imagenes">                    
-                    <a href="<?=$_ENV['RUTA']?>/es/productos" title="Los mejores panes de masa madre">
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/amplio-surtido-panes-1200.avif" alt="Pan de masa madre en Usurbil y Aginaga" title="Pan de masa madre en Usurbil y Aginaga">
+                    <a href="<?=$_ENV['RUTA'];?>/es/productos" title="Los mejores panes de masa madre">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/inicio/amplio-surtido-panes-1200.avif" alt="Pan de masa madre en Usurbil y Aginaga" title="Pan de masa madre en Usurbil y Aginaga">
                         <h4>Panadería</h4>
                     </a>
-                    <a href="<?=$_ENV['RUTA']?>/es/productos" title="Pastelería artesana bajo demanda">
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/amplio-surtido-pasteles-1200.avif" alt="Pasteles artesanos: del obrador a tu mesa" title="Pasteles artesanos: del obrador a tu mesa">
+                    <a href="<?=$_ENV['RUTA'];?>/es/productos" title="Pastelería artesana bajo demanda">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/inicio/amplio-surtido-pasteles-1200.avif" alt="Pasteles artesanos: del obrador a tu mesa" title="Pasteles artesanos: del obrador a tu mesa">
                         <h4>Pastelería</h4>
                     </a>
-                    <a href="<?=$_ENV['RUTA']?>/es/productos" title="Torrijas tradicionales a fuego lento">
-                        <img src="<?=$_ENV['RUTA']?>/assets/img/vistas/inicio/las-mejores-torrijas-de-gipuzkoa1200.avif" alt="Torrijas tradicionales todo el año" title="Torrijas tradicionales todo el año">
+                    <a href="<?=$_ENV['RUTA'];?>/es/productos" title="Torrijas tradicionales a fuego lento">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/inicio/las-mejores-torrijas-de-gipuzkoa1200.avif" alt="Torrijas tradicionales todo el año" title="Torrijas tradicionales todo el año">
                         <h4>Torrijas</h4>
                     </a>                    
                 </div>
@@ -245,6 +245,211 @@
                 </div>     
             </article>
 
+            <!-- Artículo 07 -->
+            <article class="art07">
+                <h3>(h3) ART 07</h3>
+
+                <img
+                srcset="
+                https://dummyimage.com/900x900 900w,
+                https://dummyimage.com/1800x1100 1800w,
+                https://dummyimage.com/2560x1200 2560w
+                "
+                sizes="
+                (width <= 900px) 700px,
+                (width <= 1800px) 1200px,
+                2560px"
+                src="
+                https://dummyimage.com/900x900"
+                width="900"
+                alt="" title="">
+
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quod odio totam illum hic quis quo, libero aut ab soluta, molestias expedita iste saepe, tenetur ad eligendi omnis explicabo obcaecati quae enim doloribus quaerat mollitia. Amet autem soluta adipisci corporis eaque reprehenderit, provident, dolorum deserunt, voluptas suscipit laudantium molestiae. Consectetur.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat libero perferendis dolorum voluptas recusandae rem incidunt ipsam, veniam, amet quo numquam sunt, necessitatibus quasi laboriosam voluptates enim adipisci ducimus alias vel a. Ullam alias maxime voluptate praesentium. Odit, nostrum deserunt.</p>
+                <a href="#" class="boton">CTA</a>
+            </article>
+
+            <!-- Artículo 08-->
+            <article class="art08">
+                <h3>H3 ART 08</h3>
+
+                <div>
+                    <div class="contenedor-lista">
+                        <h4>h4</h4>
+                        <ul>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contenedor-lista">
+                        <h4>h4</h4>
+                        <ul>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                            <li>
+                                <img src="<?=$_ENV['RUTA'];?>/assets/img/system/check.svg" alt="">
+                                <span>Lorem ipsum dolor sit amet.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+            <!--art09-->
+            <article class="art09">
+            <h3>H3 ART 09</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nesciunt quo ipsa expedita optio dolor voluptate ad tenetur in! Eligendi rerum deserunt voluptate officiis voluptas, earum perferendis? Temporibus non adipisci dignissimos. Aliquam exercitationem vitae saepe beatae veniam, ad distinctio ea, omnis debitis ullam quam laboriosam dignissimos praesentium. Saepe, nulla eum.</p>
+            <div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/32x32" alt="">
+                <h4>h4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolores.</p>
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/32x32" alt="">
+                <h4>H4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolores.</p>
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/32x32" alt="">
+                <h4>H4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolores.</p>
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/32x32" alt="">
+                <h4>H4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolores.</p>
+                </div><div class="ficha">
+                <img src="https://dummyimage.com/32x32" alt="">
+                <h4>H4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolores.</p>
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/32x32" alt="">
+                <h4>H4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, dolores.</p>
+                </div>
+            </div>
+            </article>
+            <!-- art10 -->
+            <article class="art10">
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            <div>
+                <img src="<?=$_ENV['RUTA'];?>/assets/img/vistas/productos/pan.avif" alt="Pan">
+            </div>
+            </article>
+            <!-- art11 -->
+            <article class="art11">
+            <h3>(h3)</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, voluptatibus corporis, culpa inventore possimus fugit expedita quidem nisi voluptas sit autem magnam repellat dignissimos vitae doloribus dolor dolorum fugiat dolore quaerat qui alias maiores commodi. Dignissimos, fuga error! Sed aperiam numquam iste ad aliquam quibusdam reprehenderit rem aut omnis nobis.</p>
+            <div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/300x300" alt="">
+                <div>
+                    <h4>Encabezado h4</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, reprehenderit!</p>
+                    <p>Lorem, ipsum.</p>
+                </div>   
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/300x300" alt="">
+                <div>
+                    <h4>Encabezado h4</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, reprehenderit! Lorem ipsum dolor sit amet consectetur.</p>
+                    <p>Lorem, ipsum.</p>
+                </div>   
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/300x300" alt="">
+                <div>
+                    <h4>Encabezado h4</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, reprehenderit!</p>
+                    <p>Lorem, ipsum.</p>
+                </div>   
+                </div>
+                <div class="ficha">
+                <img src="https://dummyimage.com/300x300" alt="">
+                <div>
+                    <h4>Encabezado h4</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, reprehenderit!</p>
+                    <p>Lorem, ipsum.</p>
+                </div>   
+                </div>
+            </div>
+            </article>
+            <!--art12-->
+            <article class="art12">
+            <img src="https://dummyimage.com/500x500" alt="">
+            <div>
+                <h3>(h3)</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda autem alias velit architecto est consequatur. Eius fuga cupiditate cumque nisi! Pariatur commodi cupiditate consectetur iure eos et officia cum delectus perspiciatis. Maxime beatae alias atque, voluptatibus porro consequuntur ex, sapiente, nam quisquam minima nulla. Rerum quis natus recusandae ut dolorum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quis cupiditate obcaecati enim fugit a. Quaerat commodi laborum sint obcaecati.</p>
+                <a href="#" class="boton">CTA</a>
+            </div>
+            </article>
+            <!--art12 reverse-->
+            <article class="art12 reverse">
+            <img src="https://dummyimage.com/500x500" alt="">
+            <div>
+                <h3>(h3)</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda autem alias velit architecto est consequatur. Eius fuga cupiditate cumque nisi! Pariatur commodi cupiditate consectetur iure eos et officia cum delectus perspiciatis. Maxime beatae alias atque, voluptatibus porro consequuntur ex, sapiente, nam quisquam minima nulla. Rerum quis natus recusandae ut dolorum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quis cupiditate obcaecati enim fugit a. Quaerat commodi laborum sint obcaecati.</p>
+                <a href="#" class="boton">CTA</a>
+            </div>
+            </article>
+
             <!-- artForm -->
             <article class="artForm">
                 <h3>Formulario de contacto</h3>
@@ -286,7 +491,7 @@
                     <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
                     <div>
                         <input type="checkbox" name="terminos" id="aceptarTerminos">                        
-                        <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA']?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
+                        <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA'];?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
                     </div>
 
                     <input type="submit" value="ENVIAR" class="boton">
@@ -297,11 +502,113 @@
 
             </article>
 
+            <!-- artForm02 -->
+            <article class="artForm02">
+                <?php
+                // comprobar si hay variables get en la url
+                // si hay variables las voy a recoger aquí
+                //
+                if(isset($_GET["error"])){
+                    $error = $_GET["error"];
+                    $campo = $_GET["campo"];
+                    $nombre = $_GET["nombre"];
+                    $telefono = $_GET["telefono"];
+                    $email = $_GET["email"];
+                    $mensaje = $_GET["mensaje"];
+                }
+                ?>
+                
+                <h3>h3</h3>
+                <div>
+                <div class="contenedor-form">
+                    <img src="<?=$_ENV['RUTA'];?>/assets/img/system/ico-mail.svg" alt="">
+                    <?php if(isset($_GET["envio"]) && $_GET["envio"] == "ok"){ ?>
+                    <p class="exito">Tu mensaje ha sido enviado correctamente</p>
+                    <?php }else{ ?>
+                    <form action="<?=$_ENV['RUTA'];?>/app/artForm02" method="post" id="idForm">
+                    <?php
+                        if(isset($error)){
+                    ?>
+                        <p class='error'>Hay un error del tipo <?=$error?> en el campo <?=$campo?></p>
+                    <?php
+                        }
+                    ?>
+                    
+                    <!--nombre-->
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe aquí tu nombre *" value="<?php if(isset($error)){echo $nombre;} ?>">
+
+                    <!--telefono-->
+                    <label for="telefono">Teléfono *</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Escribe aquí tu teléfono *" value="<?php if(isset($error)){echo $telefono;} ?>">
+
+                    <!--email-->
+                    <label for="email">Correo electrónico *</label>
+                    <input type="text" id="email" name="email" placeholder="Escribe aquí tu correo electrónico *" value="<?php if(isset($error)){echo $email;} ?>">
+
+                    <!--mensaje-->
+                    <label for="mensaje">Tu mensaje *</label>
+                    <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí tu mensaje *"><?php if(isset($error)){echo $mensaje;} ?></textarea>
+
+                    <!--terminos-->
+                    <div class="horizontal">
+                        <label for="terminos">Aceptar términos y condiciones de la privacidad *</label>
+                        <input type="checkbox" name="terminos" id="terminos">
+                    </div>
+                    
+                    
+                    <div class="horizontal">
+                        <!--captcha-->
+                        <span id="num1"></span>
+                        <span id="operador"></span>
+                        <span id="num2"></span>
+                        <span>=</span>
+                        <input type="hidden" name="respSystem" id="respSystem" value="">
+                        <input type="text" name="respUser" id="respuesta" placeholder="Resultado" autocomplete="off">
+                    </div>
+
+                    <input type="submit" value="Enviar" class="boton">
+                    </form>
+                    <?php }?>
+                </div>
+                
+                <div class="contenedor-info">
+                    <ul>
+                    <li>
+                        <a href="tel:+34943000000" target="_blank">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/ico-phone.svg" alt="">
+                        <span>943000000</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/610058776" target="_blank">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/ico-whatsapp.svg" alt="">
+                        <span>666666666</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://maps.app.goo.gl/2XTGC8KXb9mipHun7" target="_blank">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/ico-address.svg" alt="">
+                        <span>Calle de la amargura, 20800 Zarautz (Gipuzkoa)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:ainhoa.gomez+1@gmail.com" target="_blank">
+                        <img src="<?=$_ENV['RUTA'];?>/assets/img/system/ico-mail.svg" alt="">
+                        <span>ainhoa.gomez+1@gmail.com</span>
+                        </a>
+                    </li>
+                    </ul>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5808.947443853325!2d-2.1690286437178394!3d43.28340018018128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1768584282460!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                </div>
+            </article>
+
         </section>
                
     </main>
 
     <!-- FOOTER -->
-    <?php include $appRoot . '/includes/es/footer.php'?>
+    <?php include $appRoot . '/includes/footer.php'?>
 </body>
 </html>

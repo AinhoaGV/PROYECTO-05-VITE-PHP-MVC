@@ -1,0 +1,10 @@
+2026-02-20 00:00:00 - Traduceme al euskera estas dos lÃ­neas
+2026-02-20 00:01:00 - Ok, sustituyelo
+2026-02-23 19:09:53 - Al igual que en $arrayRutasGet 'es' añade el mismo content en el 'eu'
+2026-02-23 19:13:18 - Ahora en la carpeta de App/languages/ quiero que me crees una carpeta por cada content del arrayRutasGet y dentro crea un es.json y eu.json
+2026-02-25 17:40:24 - Al igual que he hecho con el title de inicio.php que lo he variabilizado y lo he incluido en languages la carpeta correspondiente en el es.json. Quiero que me variabilices todos los textos visibles de cada view y los incluyas en el es.json de su carpeta correspondiente.
+2026-02-25 17:57:00 - Hazlo con terminos.php y 404.php
+2026-02-25 18:03:54 - Ahora quiero que traduzcas los languages es.json al euskera en eu.json
+2026-02-25 18:22:05 - ¿Por qué en enlaces_menu.php no me coge la variable  que he definido en _global/es.json si en index.php hago un json_decode de este?
+2026-02-25 19:14:10 - Al igual que en enlaces_menu.php he creado las variables ruta_inicio y menu_inicio que he incluido en el es.json de _global. Variabilizame el texto un las urls de los archivos de includes y añadelos a es.json.
+2026-02-25 19:18:03 - Ahora traducemelo a euskera en eu.json

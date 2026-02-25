@@ -1,0 +1,17 @@
+{
+    "title": "Erregistroa",
+    "meta_description": "Panaderia Aginagako erabiltzaileen erregistroa",
+    "hero_h1": "Erregistroa",
+    "label_nombre": "Izena *",
+    "placeholder_nombre": "* Idatzi zure izena",
+    "label_correo": "Posta *",
+    "placeholder_correo": "* Idatzi zure posta",
+    "label_pass": "Pasahitza *",
+    "placeholder_pass": "Pasahitza",
+    "label_pass2": "Pasahitza errepikatu *",
+    "placeholder_pass2": "Pasahitza errepikatu",
+    "label_aceptar": "Onartu",
+    "label_terminos_link": "pribatutasunaren baldintzak",
+    "submit": "BIDALI",
+    "campos_obligatorios": "* Derrigorrezko eremuak"
+}
