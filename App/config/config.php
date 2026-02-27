@@ -119,14 +119,14 @@ $arrayRutasGet = [
 
 // Array de rutas permitidas para peticiones POST (formularios)
 $arrayRutasPost = [
-    '/app/gestionForm' => [
-        'view' => '/app/gestionForm.php',
+    '/app/artForm' => [
+        'view' => '/app/artForm.php',
     ],
-    '/app/gestionFormLogin' => [
-        'view' => '/app/gestionFormLogin.php',
+    '/app/artFormLogin' => [
+        'view' => '/app/artFormLogin.php',
     ],
-    '/app/gestionFormLogup' => [
-        'view' => '/app/gestionFormLogup.php',
+    '/app/artFormLogup' => [
+        'view' => '/app/artFormLogup.php',
     ],
     '/app/artForm02' => [
         'view' => '/app/artForm02.php',

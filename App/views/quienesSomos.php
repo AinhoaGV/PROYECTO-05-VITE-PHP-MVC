@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $meta_description ?>">
-    <?php echo vite_tags('src/js/views/quienesSomos.js'); ?>
+    <?php echo vite_tags('src/js/quienesSomos.js'); ?>
 
     <link rel="canonical" href="<?=$_ENV['RUTA']?>/es/sobre-nosotros">
     <meta name="robots" data-lang="robots" content="nofollow, noindex">

@@ -92,7 +92,10 @@ li{
 label{
     font-family: $fuenteTextos;
 }
-
+.error{
+    color: red;
+    font-style: italic;
+}
 .h2Especial{
     // los estilos de la caja donde dentro estarán tanto el span (ralla) como el h2
     width: 100%;

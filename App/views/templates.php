@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto 3 Recursos HTML y SCSS</title>
-    <?php echo vite_tags('src/js/views/templates.js'); ?>
+    <?php echo vite_tags('src/js/templates.js'); ?>
 </head>
 <body>
     <!-- NAV -->
@@ -454,7 +454,7 @@
             <article class="artForm">
                 <h3>Formulario de contacto</h3>
 
-                <form action="<?=base_path()?>/app/gestionForm" method="post">
+                <form action="<?=base_path()?>/app/artForm" method="post">
 
                     <?php
                     if( isset($_GET['campo']) ){
@@ -462,7 +462,7 @@
                         $campo = $_GET['campo'];
                         $error = $_GET['error'];
                         $nombre = $_GET['nombre'];
-                        $tel = $_GET['tel'];
+                        $tel = $_GET['telefono'];
                         $email = $_GET['email'];
                         $mensaje = $_GET['mensaje'];
                         // echo "<p class='error'>Hay un error en el campo $campo de tipo $error</p>";
@@ -493,7 +493,7 @@
                         <input type="checkbox" name="terminos" id="aceptarTerminos">                        
                         <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA'];?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
                     </div>
-
+                    
                     <input type="submit" value="ENVIAR" class="boton">
 
                     <p>* Campos obligatorios</p>
@@ -525,7 +525,7 @@
                     <?php if(isset($_GET["envio"]) && $_GET["envio"] == "ok"){ ?>
                     <p class="exito">Tu mensaje ha sido enviado correctamente</p>
                     <?php }else{ ?>
-                    <form action="<?=$_ENV['RUTA'];?>/app/artForm02" method="post" id="idForm">
+                    <form action="<?=base_path()?>/app/artForm02" method="post" id="idForm">
                     <?php
                         if(isset($error)){
                     ?>
@@ -566,7 +566,8 @@
                         <input type="hidden" name="respSystem" id="respSystem" value="">
                         <input type="text" name="respUser" id="respuesta" placeholder="Resultado" autocomplete="off">
                     </div>
-
+                    <input type="hidden" name="lang" value="<?= $lang ?>">
+                    <input type="hidden" name="url" value="<?= $url ?>">
                     <input type="submit" value="Enviar" class="boton">
                     </form>
                     <?php }?>

@@ -14,10 +14,12 @@ $nombre = $_POST["nombre"];
 $telefono = $_POST["telefono"];
 $email = $_POST["email"];
 $mensaje = $_POST["mensaje"];
+$lang = $_POST["lang"];
+$url = $_POST["url"];
 // 1 recibir los datos del formulario a través de POST y los value en nuevas variables que usaré aquí
 // Comprobación de términos
 if(comprobarVacio($_POST["terminos"])){
-    header("location:../index.php?error=aceptar&campo=terminos&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=aceptar&campo=terminos&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }else{
     $terminos = $_POST["terminos"];
@@ -136,7 +138,7 @@ include('./envioPhpMailer.php');
 
 // 4 guardar los datos en una base de datos
 // configuramos la conexión en $con
-$con = mysqli_connect($_ENV["DB_HOST_CONTACT"], $_ENV["DB_USER_CONTACT"], $_ENV["DB_PASS_CONTACT"], $_ENV["DB_NAME_CONTACT"]);
+$con = mysqli_connect($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASS"], $_ENV["DB_NAME"]);
 //si la conexión es false sacamos error
 if($con === false){
     error_log("Error de conexión a la base de datos: " . mysqli_connect_error());

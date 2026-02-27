@@ -48,7 +48,7 @@ if (isset($_SESSION['LOGIN']) && $_SESSION['LOGIN'] === "1") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
     <meta name="description" content="<?= $meta_description ?>">
-    <?php echo vite_tags('src/js/views/zonaAdmin.js'); ?>
+    <?php echo vite_tags('src/js/zonaAdmin.js'); ?>
 
     <link rel="canonical" href="<?=$_ENV['RUTA']?>/es/zona-admin">
     <meta name="robots" data-lang="robots" content="nofollow, noindex">
@@ -80,7 +80,7 @@ if (isset($_SESSION['LOGIN']) && $_SESSION['LOGIN'] === "1") {
         }else{
         ?>
             <article class="artForm">
-                <form action="<?=base_path()?>/app/gestionFormLogin" method="post">
+                <form action="<?=base_path()?>/app/artFormLogin" method="post">
 
                     <?php
                     if( isset($_GET['error']) ){

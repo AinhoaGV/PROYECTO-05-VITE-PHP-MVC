@@ -37,7 +37,7 @@ mysqli_close($con);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title?></title>
     <meta name="description" content="<?=$description?>">
-    <?php echo vite_tags('src/js/views/producto.js'); ?>
+    <?php echo vite_tags('src/js/producto.js'); ?>
 
     <link rel="canonical" href="<?=$_ENV['RUTA'].'/'.$url?>">
     <meta name="robots" data-lang="robots" content="nofollow, noindex">
