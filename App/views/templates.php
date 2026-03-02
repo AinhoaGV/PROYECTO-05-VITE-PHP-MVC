@@ -452,9 +452,10 @@
 
             <!-- artForm -->
             <article class="artForm">
-                <h3>Formulario de contacto</h3>
+                <h3>H3</h3>
 
-                <form action="<?=base_path()?>/app/artForm" method="post">
+                <!-- Al abrir este otro archivo, genero otro scope, se reseta y limpia la memoria en el servidor -->
+                <form action="<?=base_path()?>/app/artForm" method="post" id="idForm">
 
                     <?php
                     if( isset($_GET['campo']) ){
@@ -462,38 +463,64 @@
                         $campo = $_GET['campo'];
                         $error = $_GET['error'];
                         $nombre = $_GET['nombre'];
-                        $tel = $_GET['telefono'];
+                        $tel = $_GET['tel'];
                         $email = $_GET['email'];
                         $mensaje = $_GET['mensaje'];
-                        // echo "<p class='error'>Hay un error en el campo $campo de tipo $error</p>";
+                    }
+
+                    $errorCampo = '';
+                    if (isset($campo, $error)) {
+                        $errorCampo = sprintf('Hay un error en el campo %s de tipo %s', $campo, $error);
                     }
                     ?>
 
-                    <span class="error"><?php if( isset($campo) && $campo == "nombre"){echo "Hay un error en el campo $campo de tipo $error";} ?></span>
+                    <span class="error"><?php if(isset($campo) && $campo == "nombre"){echo $errorCampo;} ?></span>
                     <label for="nombre">Nombre *</label>
-                    <!-- <input type="text" name="nombre" id="nombre" placeholder="* Escribe tu nombre" minlength="3" maxlength="40" required > -->
                     <input type="text" class='<?php if(isset($campo) && $campo == "nombre"){ echo "inputError";} ?>' name="nombre" id="nombre" placeholder="* Escribe tu nombre" value="<?php if(isset($nombre)){echo $nombre;}?>">
 
-                    <span class="error"><?php if( isset($campo) && $campo == "telefono"){echo "Hay un error en el campo $campo de tipo $error";} ?></span>
-                    <label for="tel">Teléfono</label>
-                    <input type="tel" class='<?php if(isset($campo) && $campo == "telefono"){ echo "inputError";} ?>' name="tel" id="tel" placeholder="Aquí tu teléfono" value="<?php if(isset($tel)){echo $tel;}?>">
+                    <span class="error"><?php if( isset($campo) && $campo == "telefono"){echo $errorCampo;} ?></span>
+                    <label for="tel">Telefono</label>
+                    <input type="tel" class='<?php if(isset($campo) && $campo == "telefono"){ echo "inputError";} ?>' name="tel" id="tel" placeholder="Aqui tu telefono" value="<?php if(isset($tel)){echo $tel;}?>">
 
                     
-                    <span class="error"><?php if( isset($campo) && $campo == "email"){echo "Hay un error en el campo $campo de tipo $error";} ?></span>
+                    <span class="error"><?php if( isset($campo) && $campo == "email"){echo $errorCampo;} ?></span>
                     <label for="email">Email *</label>
-                    <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Correo electrónico" value="<?php if(isset($email)){echo $email;}?>">
+                    <input type="email" class='<?php if(isset($campo) && $campo == "email"){ echo "inputError";} ?>' name="email" id="email" placeholder="* Correo electronico" value="<?php if(isset($email)){echo $email;}?>">
 
 
-                    <span class="error"><?php if( isset($campo) && $campo == "mensaje"){echo "Hay un error en el campo $campo de tipo $error";} ?></span>
+                    <span class="error"><?php if( isset($campo) && $campo == "mensaje"){echo $errorCampo;} ?></span>
                     <label for="mensaje">Comentarios</label>
-                    <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aquí tu mensaje"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
+                    <textarea name="mensaje" class='<?php if(isset($campo) && $campo == "mensaje"){ echo "inputError";} ?>' id="mensaje" placeholder="Escribe aqui tu mensaje"><?php if(isset($mensaje)){echo $mensaje;}?></textarea>
 
-                    <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los términos";} ?></span>
+                    <span class="error"><?php if( isset($campo) && $campo == "terminos"){echo "Para poder enviar una consulta, debes aceptar los terminos";} ?></span>
                     <div>
                         <input type="checkbox" name="terminos" id="aceptarTerminos">                        
-                        <labelfor="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA'];?>/es/terminos-legales">términos y condiciones de privacidad</a></label>
+                        <label for="aceptarTerminos">Aceptar <a href="<?=$_ENV['RUTA']?>/es/terminos-legales">terminos y condiciones de privacidad</a></label>
                     </div>
+
+                    <!-- CAPTCHA -->
+                    <span class="error"><?php if(isset($campo) && $campo == "captcha"){echo "No has resuelto correctamente el Captcha";} ?></span>
+                    <div>
+                        <label for="respUser">Resuelve:</label>
+
+                        <!-- campos que rellenamos desde js con numeros random -->
+                        <span id="num1">XX</span>
+                        <span>+</span>
+                        <span id="num2">XX</span>
+                        
+                        <!-- campo que debe rellenar ewl usuario con la solucion -->
+                        <input type="text" name="respUser" id="respUser">
+
+                        <!-- campo oculto con la respuesta correcta asignada desde js -->
+                        <input type="hidden" name="respSystem" id="respSystem" value="XXXX">
+                    </div>
+
+                    <!-- input oculto donde el value es el valor de $lang, ergo el idioma -->
+                    <input type="text" name="inputIdioma" value="<?= $lang?>" style="display:none;">
+                    <!-- otro input oculto -->
+                    <input type="text" name="inputUrl" value="<?= $url?>" style="display:none;">
                     
+
                     <input type="submit" value="ENVIAR" class="boton">
 
                     <p>* Campos obligatorios</p>
@@ -503,7 +530,7 @@
             </article>
 
             <!-- artForm02 -->
-            <article class="artForm02">
+            <article class="artForm02" id="artForm02">
                 <?php
                 // comprobar si hay variables get en la url
                 // si hay variables las voy a recoger aquí
@@ -525,7 +552,7 @@
                     <?php if(isset($_GET["envio"]) && $_GET["envio"] == "ok"){ ?>
                     <p class="exito">Tu mensaje ha sido enviado correctamente</p>
                     <?php }else{ ?>
-                    <form action="<?=base_path()?>/app/artForm02" method="post" id="idForm">
+                    <form action="<?=base_path()?>/app/artForm02" method="post" id="idForm02">
                     <?php
                         if(isset($error)){
                     ?>
@@ -559,12 +586,12 @@
                     
                     <div class="horizontal">
                         <!--captcha-->
-                        <span id="num1"></span>
-                        <span id="operador"></span>
-                        <span id="num2"></span>
+                        <span id="num1Form02"></span>
+                        <span id="operadorForm02"></span>
+                        <span id="num2Form02"></span>
                         <span>=</span>
-                        <input type="hidden" name="respSystem" id="respSystem" value="">
-                        <input type="text" name="respUser" id="respuesta" placeholder="Resultado" autocomplete="off">
+                        <input type="hidden" name="respSystemForm02" id="respSystemForm02" value="">
+                        <input type="text" name="respUserForm02" id="respuestaForm02" placeholder="Resultado" autocomplete="off">
                     </div>
                     <input type="hidden" name="lang" value="<?= $lang ?>">
                     <input type="hidden" name="url" value="<?= $url ?>">

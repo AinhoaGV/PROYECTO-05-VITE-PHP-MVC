@@ -34,16 +34,16 @@ if(comprobarVacio($_POST["terminos"])){
 // }
 
 // Comprobación de Captcha
-$respUser = $_POST["respUser"];
-$respSystem = $_POST["respSystem"];
+$respUserForm02 = $_POST["respUserForm02"];
+$respSystemForm02 = $_POST["respSystemForm02"];
 // Vacio
-if(!isset($respUser)){
-    header("location:../index.php?error=vacio&campo=captcha&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+if(!isset($respUserForm02)){
+    header("location:".$_ENV['RUTA'].$url."?error=vacio&campo=captcha&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 // No coinciden
-if($respUser != $respSystem){
-    header("location:../index.php?error=nocoincide&campo=captcha&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+if($respUserForm02 != $respSystemForm02){
+    header("location:".$_ENV['RUTA'].$url."?error=nocoincide&campo=captcha&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 // 2 comprobar que los datos son correctos
@@ -52,12 +52,12 @@ $fecha = date('Y-m-d H:i:s'); // guardo la fecha y hora del envío del formulari
 
 //Si nombre viene vacio
 if(comprobarVacio($nombre)){
-    header('location:../index.php?error=vacio&campo=nombre');
+    header("location:".$_ENV['RUTA'].$url."?error=vacio&campo=nombre");
     die;
 }
 // Si nombre es menor de 3 o mayor de 40
 if(comprobarCaracteres($nombre, 3, 40)){
-    header("location:../index.php?error=caracteres&campo=nombre&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=caracteres&campo=nombre&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 // $contadorCaracteres = strlen($nombre);
@@ -67,19 +67,19 @@ if(comprobarCaracteres($nombre, 3, 40)){
 // }
 // Si teléfono viene vacio
 if(comprobarVacio($telefono)){
-    header("location:../index.php?error=vacio&campo=telefono&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=vacio&campo=telefono&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 
 // Si el email viene vacio
 if(comprobarVacio($email)){
-    header("location:../index.php?error=vacio&campo=email&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=vacio&campo=email&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 
 //Expresión regular para comprobar formato email
 if (!validar_email($email)) {
-    header("location:../index.php?error=formato&campo=email&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=formato&campo=email&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 // $patron = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
@@ -94,12 +94,12 @@ if (!validar_email($email)) {
 
 // SI el mensaje viene vacio
 if(comprobarVacio($mensaje)){
-    header("location:../index.php?error=vacio&campo=mensaje&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=vacio&campo=mensaje&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;
 }
 // Si nombre es menor de 4 o mayor de 200
 if(comprobarCaracteres($mensaje, 5, 200)){
-    header("location:../index.php?error=caracteres&campo=mensaje&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm01");
+    header("location:".$_ENV['RUTA'].$url."?error=caracteres&campo=mensaje&nombre=$nombre&telefono=$telefono&email=$email&mensaje=$mensaje#artForm02");
     die;    
 }
 // $contadorCaracteres = strlen($mensaje);
@@ -108,8 +108,12 @@ if(comprobarCaracteres($mensaje, 5, 200)){
 //     die;
 // }
 
+
+//TODO: Variabilizar los textos del template de email para utilizarlo en diferentes emails.
+//TODO: Placeholdear los labels del template de email para utilizarlo en el idioma.
+
 // 3 Enviar emails
-$urlWeb = "http://localhost:3000";
+$web = $_ENV["RUTA"];
 $correoEmisor = $_ENV["EMAIL_WEB"];
 $nombreEmisor = "Web Panadería";
 $correoDestinatario = $_ENV["EMAIL_ADMIN"];
@@ -118,10 +122,9 @@ $asunto = "Has recibido una nueva consulta en la web de $nombre";
 
 $html = file_get_contents($basePath . '/App/app/templates/artForm02.html');
 
-// TODO: cambiar variables y template y duplicar para usuario
-
 $vars = [
-    '{urlWeb}' => $urlWeb,
+    '{web}' => $web,
+    '{url}' => $url,
     '{asunto}' => $asunto,
     '{titulo}' => "Has recibido un correo pidiendo información de $nombre",
     '{explicacion}' => "A continuación, te mostramos los datos de la persona interesada:",
@@ -134,25 +137,25 @@ $vars = [
 ];
 $cuerpo = str_replace(array_keys($vars), array_values($vars), $html);
 
-include('./envioPhpMailer.php');
+include($basePath . '/App/app/envioPhpMailer.php');
 
 // 4 guardar los datos en una base de datos
 // configuramos la conexión en $con
-$con = mysqli_connect($_ENV["DB_HOST"], $_ENV["DB_USER"], $_ENV["DB_PASS"], $_ENV["DB_NAME"]);
+$con = mysqli_connect($_ENV["BBDD_HOST"], $_ENV["BBDD_USER"], $_ENV["BBDD_PASS"], $_ENV["BBDD_BBDD"]);
 //si la conexión es false sacamos error
 if($con === false){
     error_log("Error de conexión a la base de datos: " . mysqli_connect_error());
 }else{
     // si la conexión es correcta, continuamos
     $con->set_charset("utf8mb4");
-    $sql = "INSERT INTO consultas (nombre, telefono, email, mensaje, ip, fecha) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO consultas_web (creado_en, nombre, telefono, email, mensaje, ip, idioma, url_origen) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $sql);
     // ejecutamos el inser del registro en la tabla consultas de la db con prepare
     if($stmt===false){
         error_log("Error al preparar la consulta: " . mysqli_error($con));
     }else{
         //inserción definitiva en la DB
-        mysqli_stmt_bind_param($stmt, "ssssss", $nombre, $telefono, $email, $mensaje, $ip, $fecha);
+        mysqli_stmt_bind_param($stmt, "ssssssss", $fecha, $nombre, $telefono, $email, $mensaje, $ip, $lang, $url);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }
@@ -161,7 +164,7 @@ if($con === false){
 }
 
 // 5 enviar correos de aviso: a la empresa y al propio usuario
-$urlWeb = "http://localhost:3000";
+$web = $_ENV["RUTA"];
 $correoEmisor = $_ENV["EMAIL_WEB"];
 $nombreEmisor = "Web Panadería";
 $correoDestinatario = $email;
@@ -171,7 +174,8 @@ $asunto = "Gracias por contactar con nosotros, $nombre";
 $html = file_get_contents($basePath . '/App/app/templates/artForm02.html');
 
 $vars = [
-    '{urlWeb}' => $urlWeb,
+    '{web}' => $web,
+    '{url}' => $url,
     '{asunto}' => $asunto,
     '{titulo}'   => "Hemos recibido tu consulta, $nombre",
     '{explicacion}' => "A continuación, te mostramos los datos que nos has facilitado:",
@@ -184,10 +188,10 @@ $vars = [
 ];
 $cuerpo = str_replace(array_keys($vars), array_values($vars), $html);
 
-include('./envioPhpMailer.php');
+include($basePath . '/App/app/envioPhpMailer.php');
 
 // 6  redirigir a la página de index para mostrar un mensaje de envío ok en vez de el formulario
 $nombreURL = urlencode($nombre);
-header("location:../index.php?envio=ok&nom=$nombreURL#artForm01");
+header("location:".$_ENV['RUTA'].$url."?envio=ok&nom=$nombreURL#artForm02");
 die;
 ?>

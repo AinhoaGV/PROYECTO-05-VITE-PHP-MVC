@@ -1,12 +1,12 @@
 // OBJETIVOS
 // RECOJO EN CONSTANTES LOS ELEMENTOS A LOS QUE TENDRÉ QUE INSERTAR LOS NÚMEROS RANDOM Y TAMBIÉN EL INPUT
-const idForm = document.querySelector("#idForm")
+const idForm02 = document.querySelector("#idForm02")
 
-if(idForm){
-    const num1 = document.getElementById("num1")
-    const num2 = document.getElementById("num2")
-    const operador = document.getElementById("operador")
-    const respSystem = document.getElementById("respSystem")
+if(idForm02){
+    const num1 = document.getElementById("num1Form02")
+    const num2 = document.getElementById("num2Form02")
+    const operador = document.getElementById("operadorForm02")
+    const respSystem = document.getElementById("respSystemForm02")
     // CALCULAR DOS NÚMEROS RANDOM DEL 0 AL 10
     let valorNum1 = (Number)(Math.floor(Math.random()*10))
     let valorNum2 = (Number)(Math.floor(Math.random()*10))
