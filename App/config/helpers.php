@@ -31,7 +31,7 @@ function validar_email($valorRecibido) {
     // Me devolverá false si hay error
     // Me devolverá true si NO hay error (si coincide la estructura )
 }
-
+//resurce artForm03
 function enviarRespuestaAsincrona($mensaje, $fallo, $campo){
 
     // creación de array asociativo
