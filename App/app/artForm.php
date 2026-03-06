@@ -129,7 +129,7 @@ switch ($lang){
         $asunto = "Hemos recibido tu correo, $nombre - Panadería Aginaga";
         $cuerpo='
         <!DOCTYPE html>
-        <html lang="es">
+        <html lang="'.$lang.'">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -169,7 +169,7 @@ switch ($lang){
         $asunto = "Zure mezua jaso dugu, $nombre - Aginagako Okindegia";
         $cuerpo='
         <!DOCTYPE html>
-        <html lang="eu">
+        <html lang="'.$lang.'">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -223,7 +223,7 @@ $nombreDestinatario= "Admin de la web";
 $asunto = "Has recibido una nueva consulta en la web de $nombre";
 $cuerpo='
 <!DOCTYPE html>
-<html lang="es">
+<html lang="'.$lang.'">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

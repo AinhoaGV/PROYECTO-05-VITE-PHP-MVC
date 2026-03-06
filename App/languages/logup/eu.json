@@ -1,6 +1,9 @@
 {
     "title": "Erregistroa",
     "meta_description": "Panaderia Aginagako erabiltzaileen erregistroa",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Erregistroa",
     "label_nombre": "Izena *",
     "placeholder_nombre": "* Idatzi zure izena",

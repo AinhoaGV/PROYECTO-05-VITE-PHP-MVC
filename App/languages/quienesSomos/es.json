@@ -1,6 +1,9 @@
 {
     "title": "Sobre nosotros | Panaderia Aginaga - Tradicion desde 1925",
     "meta_description": "Conoce al equipo de profesionales de Panaderia Aginaga. Casi un siglo de tradicion panadera en el corazon de Aginaga, elaborando productos artesanales de la mejor calidad.",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Panaderos por tradicion desde 1925",
     "equipo_h2": "Nuestro equipo de profesionales",
     "equipo_h3": "Maestros panaderos con alma y tradicion",

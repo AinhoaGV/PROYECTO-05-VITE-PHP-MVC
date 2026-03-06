@@ -1,6 +1,9 @@
 {
     "title": "Jarri gurekin harremanetan",
     "meta_description": "Aginagako gure okindegiaren harremanetarako orria",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Zugandik gertu gaude",
     "section_h2": "Kontaktua",
     "form_h3": "Harremanetarako formularioa",

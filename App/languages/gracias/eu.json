@@ -1,6 +1,9 @@
 {
     "title": "Eskerrik asko idazteagatik | Panaderia Aginaga - Lantegi artisaua eta taldea",
     "meta_description": "Ezagutu Aginagako gure okindegiaren historia eta lantegiko talde artisaua. Ore amaiko ogian eta tokiko tradizioan konprometitutako okin maisuak. Usurbil eta Oriorako zerbitzua kalitatearekiko grinarekin eta kilometro zero ikuspegiarekin.",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Eskerrik asko idazteagatik",
     "hero_cta": "Aurkitu gaitzazu"
 }

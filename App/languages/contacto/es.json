@@ -1,6 +1,9 @@
 {
     "title": "Contacta con nosotros",
     "meta_description": "Pagina de contacto de nuestra panaderia en Aginaga",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Estamos cerca de ti",
     "section_h2": "Contacta",
     "form_h3": "Formulario de contacto",

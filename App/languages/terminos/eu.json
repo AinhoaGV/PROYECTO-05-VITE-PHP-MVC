@@ -1,6 +1,9 @@
 {
     "title": "Legezko baldintzak | Panaderia Aginaga",
     "meta_description": "Panaderia Aginagaren legezko oharra, pribatutasun politika eta cookien kudeaketa.",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Pribatutasun eta cookien kudeaketarako baldintzak",
     "hero_logo_alt": "Panaderia Aginagaren logotipoa",
     "hero_logo_title": "Panaderia Aginaga",

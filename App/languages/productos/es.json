@@ -1,6 +1,9 @@
 {
     "title": "Nuestros productos panaderos",
     "meta_description": "Catalogo de panes, pasteles y torrijas artesanas en Panaderia Aginaga",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Los mejores productos en tu mesa",
     "hero_cta": "CTA",
     "intro_h2": "Elaboramos cada dia productos 100% artesanos",

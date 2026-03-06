@@ -1,6 +1,9 @@
 {
     "title": "Registro",
     "meta_description": "Registro de usuarios de Panaderia Aginaga",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Registro",
     "label_nombre": "Nombre *",
     "placeholder_nombre": "* Escribe tu nombre",

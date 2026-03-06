@@ -31,7 +31,7 @@ mysqli_close($con);
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="<?=$lang ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@ mysqli_close($con);
     <meta name="description" content="<?=$description?>">
     <?php echo vite_tags('src/js/producto.js'); ?>
 
-    <link rel="canonical" href="<?=$_ENV['RUTA'].'/'.$url?>">
+    <link rel="canonical" href="<?= $_ENV['RUTA'] ?><?= $url ?>">
     <meta name="robots" data-lang="robots" content="nofollow, noindex">
     <meta name="referrer" content="origin">
 

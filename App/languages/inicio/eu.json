@@ -1,6 +1,9 @@
 {
     "title": "Panaderia Aginaga | Ogi eta gozogintza artisau lantegia",
     "meta_description": "Aginagako okindegi eta gozogintza artisaua 1925etik. Ezagutu gure taldea, aurkitu gure produktuak eta gozatu bisita bakoitzean hurbileko arreta.",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Panaderia Aginaga, artisau tradizioa 1925etik",
     "hero_cta": "Egin zure eskaera",
     "presentacion_h2": "Ogia, pastelak eta hurbiltasuna Aginagan",

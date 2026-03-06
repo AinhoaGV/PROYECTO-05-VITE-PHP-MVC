@@ -1,6 +1,9 @@
 {
     "title": "Gure okindegiko produktuak",
     "meta_description": "Panaderia Aginagako ogi, pastel eta torrija artisaueen katalogoa",
+    "og_image": "/assets/img/logos/panaderia-aginaga-logo.svg",
+    "og_image_alt": "Panaderia Aginaga",
+    "site_name": "Panaderia Aginaga",
     "hero_h1": "Produktu onenak zure mahaian",
     "hero_cta": "CTA",
     "intro_h2": "Egunero %100 artisau produktuak egiten ditugu",
