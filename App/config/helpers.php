@@ -143,6 +143,69 @@ $anio=date('Y');
 // MOSTRASR O NO ERRORES PHP, EN PRODUCCIÓN ESTO DEBERÍA ESTAR COMO 0, UNA VEZ SEPAMOS QUE TODO ESTÁ OK
 ini_set('display_errors', $_ENV['DISPLAY_ERRORS']);
 
+// Obtiene la ruta física de /public de forma robusta en local y producción.
+function vite_public_root() {
+    static $publicRoot = null;
+    if ($publicRoot !== null) {
+        return $publicRoot;
+    }
+
+    $candidates = [];
+
+    $documentRoot = trim((string)($_SERVER['DOCUMENT_ROOT'] ?? ''));
+    if ($documentRoot !== '') {
+        $candidates[] = rtrim(str_replace('\\', '/', $documentRoot), '/');
+    }
+
+    $scriptFilename = trim((string)($_SERVER['SCRIPT_FILENAME'] ?? ''));
+    if ($scriptFilename !== '') {
+        $candidates[] = rtrim(str_replace('\\', '/', dirname($scriptFilename)), '/');
+    }
+
+    $projectPublic = realpath(__DIR__ . '/../../public');
+    if ($projectPublic !== false) {
+        $candidates[] = rtrim(str_replace('\\', '/', $projectPublic), '/');
+    }
+
+    $projectPublicHtml = realpath(__DIR__ . '/../../public_html');
+    if ($projectPublicHtml !== false) {
+        $candidates[] = rtrim(str_replace('\\', '/', $projectPublicHtml), '/');
+    }
+
+    foreach ($candidates as $candidate) {
+        if ($candidate !== '' && is_dir($candidate . '/assets')) {
+            $publicRoot = $candidate;
+            return $publicRoot;
+        }
+    }
+
+    $publicRoot = $candidates[0] ?? '';
+    return $publicRoot;
+}
+
+// Devuelve la ruta del manifest de Vite.
+function vite_manifest_path() {
+    static $manifestPath = null;
+    if ($manifestPath !== null) {
+        return $manifestPath;
+    }
+
+    $publicRoot = vite_public_root();
+    if ($publicRoot === '') {
+        $manifestPath = '';
+        return $manifestPath;
+    }
+
+    $candidate = $publicRoot . '/assets/.vite/manifest.json';
+    if (is_file($candidate) && is_readable($candidate)) {
+        $manifestPath = $candidate;
+        return $manifestPath;
+    }
+
+    $manifestPath = '';
+    return $manifestPath;
+}
+
 // Carga el manifest de Vite en producción para conocer los nombres finales
 // de los archivos generados (hash en el nombre).
 function vite_manifest() {
@@ -151,16 +214,25 @@ function vite_manifest() {
         return $manifest;
     }
 
-    // Ruta al manifest generado por "vite build".
-    $manifestPath = __DIR__ . '/../../public/assets/.vite/manifest.json';
-    if (!file_exists($manifestPath)) {
+    $manifestPath = vite_manifest_path();
+    if ($manifestPath === '') {
         $manifest = [];
         return $manifest;
     }
 
-    // Leemos y parseamos el JSON del manifest.
     $contents = file_get_contents($manifestPath);
-    $manifest = json_decode($contents, true) ?? [];
+    if ($contents === false) {
+        $manifest = [];
+        return $manifest;
+    }
+
+    // Compatibilidad por si el archivo viene con BOM UTF-8.
+    if (strncmp($contents, "\xEF\xBB\xBF", 3) === 0) {
+        $contents = substr($contents, 3);
+    }
+
+    $decoded = json_decode($contents, true);
+    $manifest = is_array($decoded) ? $decoded : [];
 
     return $manifest;
 }
@@ -173,7 +245,6 @@ function vite_is_dev_server_running($devServerUrl) {
         return $isRunning;
     }
 
-    // Extraemos host/puerto del URL para intentar abrir un socket.
     $parsedUrl = parse_url($devServerUrl);
     if (!$parsedUrl || !isset($parsedUrl['host'])) {
         $isRunning = false;
@@ -197,44 +268,129 @@ function vite_is_dev_server_running($devServerUrl) {
 // Genera las etiquetas <script> y <link> necesarias para una entrada de Vite.
 // En dev, cargamos el JS desde el dev server (que también inyecta el CSS).
 // En build, usamos el manifest para enlazar JS y CSS ya compilados.
+function vite_tags_mode() {
+    $mode = strtolower(trim((string)($_ENV['VITE_TAGS_MODE'] ?? 'auto')));
+    if (!in_array($mode, ['auto', 'dev', 'build'], true)) {
+        return 'auto';
+    }
+
+    return $mode;
+}
+
+function vite_resolve_manifest_asset(array $manifest, string $entry) {
+    if (isset($manifest[$entry]) && is_array($manifest[$entry])) {
+        return $manifest[$entry];
+    }
+
+    foreach ($manifest as $manifestAsset) {
+        if (!is_array($manifestAsset)) {
+            continue;
+        }
+
+        if (($manifestAsset['src'] ?? null) === $entry) {
+            return $manifestAsset;
+        }
+    }
+
+    return null;
+}
+
+function vite_collect_css_from_manifest(array $manifest, array $asset, array &$visited = []) {
+    $assetId = (string)($asset['file'] ?? '');
+    if ($assetId !== '') {
+        if (isset($visited[$assetId])) {
+            return [];
+        }
+        $visited[$assetId] = true;
+    }
+
+    $css = [];
+
+    foreach (($asset['css'] ?? []) as $cssFile) {
+        if (is_string($cssFile) && $cssFile !== '') {
+            $css[] = $cssFile;
+        }
+    }
+
+    foreach (($asset['imports'] ?? []) as $importKey) {
+        if (!is_string($importKey) || !isset($manifest[$importKey]) || !is_array($manifest[$importKey])) {
+            continue;
+        }
+
+        $css = array_merge($css, vite_collect_css_from_manifest($manifest, $manifest[$importKey], $visited));
+    }
+
+    return array_values(array_unique($css));
+}
+
+function vite_assets_base_url() {
+    $baseUrl = rtrim((string)($_ENV['RUTA'] ?? ''), '/');
+    if ($baseUrl === '') {
+        return '/assets';
+    }
+
+    return $baseUrl . '/assets';
+}
+
 function vite_tags($entry) {
     $entries = is_array($entry) ? $entry : [$entry];
-    $devServer = $_ENV['VITE_DEV_SERVER'] ?? 'http://localhost:5173';
-    $useDevServer = vite_is_dev_server_running($devServer);
+    $entries = array_values(array_filter($entries, static fn($item) => is_string($item) && $item !== ''));
+
+    if (empty($entries)) {
+        return '';
+    }
+
+    $devServer = rtrim((string)($_ENV['VITE_DEV_SERVER'] ?? 'http://localhost:5173'), '/');
+    $manifest = vite_manifest();
+
+    $mode = vite_tags_mode();
+    $httpHost = (string)($_SERVER['HTTP_HOST'] ?? '');
+    $hostOnly = strtolower(explode(':', $httpHost)[0]);
+    $isLocalHost = in_array($hostOnly, ['localhost', '127.0.0.1'], true) || $httpHost === '';
+
+    if ($mode === 'dev') {
+        $useDevServer = vite_is_dev_server_running($devServer);
+    } elseif ($mode === 'build') {
+        $useDevServer = false;
+    } else { // auto
+        $useDevServer = $isLocalHost && vite_is_dev_server_running($devServer);
+    }
 
     $tags = '';
-    $shouldInjectClient = $useDevServer;
     static $clientInjected = false;
 
     foreach ($entries as $currentEntry) {
         if ($useDevServer) {
-            if ($shouldInjectClient && !$clientInjected) {
+            if (!$clientInjected) {
                 $tags .= '<script type="module" src="' . $devServer . '/@vite/client"></script>' . PHP_EOL;
                 $clientInjected = true;
             }
-            $tags .= '<script type="module" src="' . $devServer . '/' . $currentEntry . '"></script>' . PHP_EOL;
+
+            $tags .= '<script type="module" src="' . $devServer . '/' . ltrim($currentEntry, '/') . '"></script>' . PHP_EOL;
             continue;
         }
 
-        $manifest = vite_manifest();
-        if (!isset($manifest[$currentEntry])) {
+        $asset = vite_resolve_manifest_asset($manifest, $currentEntry);
+        if ($asset === null) {
+            $safeEntry = htmlspecialchars($currentEntry, ENT_QUOTES, 'UTF-8');
+            $tags .= '<!-- vite_tags: asset no encontrado para ' . $safeEntry . ' -->' . PHP_EOL;
             continue;
         }
 
-        $asset = $manifest[$currentEntry];
+        $assetsBaseUrl = vite_assets_base_url();
+        $cssFiles = vite_collect_css_from_manifest($manifest, $asset);
+
+        foreach ($cssFiles as $cssFile) {
+            $tags .= '<link rel="stylesheet" href="' . $assetsBaseUrl . '/' . $cssFile . '">' . PHP_EOL;
+        }
+
         $file = $asset['file'] ?? '';
-        $baseUrl = rtrim($_ENV['RUTA'], '/');
-
-        if ($file !== '') {
+        if (is_string($file) && $file !== '') {
             if (str_ends_with($file, '.css')) {
-                $tags .= '<link rel="stylesheet" href="' . $baseUrl . '/assets/' . $file . '">' . PHP_EOL;
+                $tags .= '<link rel="stylesheet" href="' . $assetsBaseUrl . '/' . $file . '">' . PHP_EOL;
             } else {
-                $tags .= '<script type="module" src="' . $baseUrl . '/assets/' . $file . '"></script>' . PHP_EOL;
+                $tags .= '<script type="module" src="' . $assetsBaseUrl . '/' . $file . '"></script>' . PHP_EOL;
             }
-        }
-
-        foreach ($asset['css'] ?? [] as $cssFile) {
-            $tags .= '<link rel="stylesheet" href="' . $baseUrl . '/assets/' . $cssFile . '">' . PHP_EOL;
         }
     }
 

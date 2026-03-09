@@ -72,7 +72,7 @@
                 <h3><?= $form_h3 ?></h3>
 
                 <!-- Al abrir este otro archivo, genero otro scope, se reseta y limpia la memoria en el servidor -->
-                <form action="<?=base_path()?>/app/artForm" method="post">
+                <form action="<?=base_path()?>/app/artForm" method="post" id="idForm">
 
                     <?php
                     if( isset($_GET['campo']) ){

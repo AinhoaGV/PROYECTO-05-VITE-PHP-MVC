@@ -1,92 +1,102 @@
 {
-  "src/js/views/404.js": {
-    "file": "js/src/js/views/404.js-BWimnRfg.js",
-    "name": "src/js/views/404.js",
-    "src": "src/js/views/404.js",
+  "__artForm-BdEbyA7f.js": {
+    "file": "js/_artForm-BdEbyA7f.js",
+    "name": "_artForm"
+  },
+  "src/js/404.js": {
+    "file": "js/404-2ONxg0gt.js",
+    "name": "404",
+    "src": "src/js/404.js",
     "isEntry": true,
     "css": [
-      "css/404-BH_1ceQL.css"
+      "css/404-nfbdNs2-.css"
     ]
   },
-  "src/js/views/contacto.js": {
-    "file": "js/src/js/views/contacto.js-Svh8lHYm.js",
-    "name": "src/js/views/contacto.js",
-    "src": "src/js/views/contacto.js",
+  "src/js/contacto.js": {
+    "file": "js/contacto-CW06Har0.js",
+    "name": "contacto",
+    "src": "src/js/contacto.js",
     "isEntry": true,
+    "imports": [
+      "__artForm-BdEbyA7f.js"
+    ],
     "css": [
-      "css/contacto-ZRNzxAa9.css"
+      "css/contacto-CkrHfgEs.css"
     ]
   },
-  "src/js/views/gracias.js": {
-    "file": "js/src/js/views/gracias.js-Dg6wN68K.js",
-    "name": "src/js/views/gracias.js",
-    "src": "src/js/views/gracias.js",
+  "src/js/gracias.js": {
+    "file": "js/gracias-ChbY7YSG.js",
+    "name": "gracias",
+    "src": "src/js/gracias.js",
     "isEntry": true,
     "css": [
-      "css/gracias-CRQzoGQH.css"
+      "css/gracias-CEe0IGr9.css"
     ]
   },
-  "src/js/views/inicio.js": {
-    "file": "js/src/js/views/inicio.js-DUoPcUNs.js",
-    "name": "src/js/views/inicio.js",
-    "src": "src/js/views/inicio.js",
+  "src/js/inicio.js": {
+    "file": "js/inicio-os5v7t_F.js",
+    "name": "inicio",
+    "src": "src/js/inicio.js",
     "isEntry": true,
     "css": [
-      "css/inicio-S40GHx3e.css"
+      "css/inicio-jHb-gZO-.css"
     ]
   },
-  "src/js/views/producto.js": {
-    "file": "js/src/js/views/producto.js-CDkYbqwo.js",
-    "name": "src/js/views/producto.js",
-    "src": "src/js/views/producto.js",
+  "src/js/producto.js": {
+    "file": "js/producto-BYqkFmQT.js",
+    "name": "producto",
+    "src": "src/js/producto.js",
     "isEntry": true,
     "css": [
-      "css/producto-B1vPg1rY.css"
+      "css/producto-DVKdp4hJ.css"
     ]
   },
-  "src/js/views/productos.js": {
-    "file": "js/src/js/views/productos.js-C4N3KZlv.js",
-    "name": "src/js/views/productos.js",
-    "src": "src/js/views/productos.js",
+  "src/js/productos.js": {
+    "file": "js/productos-CaJXypC1.js",
+    "name": "productos",
+    "src": "src/js/productos.js",
     "isEntry": true,
     "css": [
-      "css/productos-kHmLbMla.css"
+      "css/productos-ulcVE__Q.css"
     ]
   },
-  "src/js/views/quienesSomos.js": {
-    "file": "js/src/js/views/quienesSomos.js-DEBMqfcD.js",
-    "name": "src/js/views/quienesSomos.js",
-    "src": "src/js/views/quienesSomos.js",
+  "src/js/quienesSomos.js": {
+    "file": "js/quienesSomos-BF6nQ5XW.js",
+    "name": "quienesSomos",
+    "src": "src/js/quienesSomos.js",
     "isEntry": true,
     "css": [
-      "css/quienesSomos-CQw6QoN_.css"
+      "css/quienesSomos-fzwlZjoe.css"
     ]
   },
-  "src/js/views/templates.js": {
-    "file": "js/src/js/views/templates.js-DcwRoIzk.js",
-    "name": "src/js/views/templates.js",
-    "src": "src/js/views/templates.js",
+  "src/js/templates.js": {
+    "file": "js/templates-DvUjhDq0.js",
+    "name": "templates",
+    "src": "src/js/templates.js",
     "isEntry": true,
+    "imports": [
+      "__artForm-BdEbyA7f.js"
+    ],
     "css": [
-      "css/templates-BLO9yrbX.css"
+      "css/templates-4GcIoTlo.css"
     ]
   },
-  "src/js/views/terminos.js": {
-    "file": "js/src/js/views/terminos.js-B9mO4QRC.js",
-    "name": "src/js/views/terminos.js",
-    "src": "src/js/views/terminos.js",
+  "src/js/terminos.js": {
+    "file": "js/terminos-yISKFVyX.js",
+    "name": "terminos",
+    "src": "src/js/terminos.js",
     "isEntry": true,
     "css": [
-      "css/terminos-DYv4LJJV.css"
+      "css/terminos-DObrVWPj.css"
     ]
   },
-  "src/js/views/zonaAdmin.js": {
-    "file": "js/src/js/views/zonaAdmin.js-BxljaID5.js",
-    "name": "src/js/views/zonaAdmin.js",
-    "src": "src/js/views/zonaAdmin.js",
+  "src/js/zonaAdmin.js": {
+    "file": "js/zonaAdmin-CUI7IvPu.js",
+    "name": "zonaAdmin",
+    "src": "src/js/zonaAdmin.js",
     "isEntry": true,
     "css": [
-      "css/zonaAdmin-DcOmY1Lx.css"
+      "css/zonaAdmin-BBuFZA-r.css"
     ]
   }
 }

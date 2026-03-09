@@ -2,7 +2,7 @@
 
 
 <!-- V2 COOKIE LAD -->
-<script defer src="https://webda.eus/apis/cookielad/loader.js?key=barbakoaEnJulio!bbdd-profe&color=d14d4d"></script>
+<!-- <script defer src="https://webda.eus/apis/cookielad/loader.js?key=barbakoaEnJulio!bbdd-profe&color=d14d4d"></script> -->
 
 <!-- utilidades para móvil -->
 <meta name="mobile-web-app-capable" content="yes">

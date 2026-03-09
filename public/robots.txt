@@ -6,4 +6,4 @@ Disallow: /vendor/
 Disallow: /README/
 
 # Sitemap
-Sitemap: https://bbdd-profe.webda.eus/sitemap.xml
+Sitemap: https://ainhoa-lab-mvc.webda.eus/sitemap.xml

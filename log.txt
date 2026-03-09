@@ -1,10 +1,14 @@
 2026-02-20 00:00:00 - Traduceme al euskera estas dos líneas
 2026-02-20 00:01:00 - Ok, sustituyelo
-2026-02-23 19:09:53 - Al igual que en $arrayRutasGet 'es' a�ade el mismo content en el 'eu'
+2026-02-23 19:09:53 - Al igual que en $arrayRutasGet 'es' a�ade el mismo content en el 'eu'
 2026-02-23 19:13:18 - Ahora en la carpeta de App/languages/ quiero que me crees una carpeta por cada content del arrayRutasGet y dentro crea un es.json y eu.json
 2026-02-25 17:40:24 - Al igual que he hecho con el title de inicio.php que lo he variabilizado y lo he incluido en languages la carpeta correspondiente en el es.json. Quiero que me variabilices todos los textos visibles de cada view y los incluyas en el es.json de su carpeta correspondiente.
 2026-02-25 17:57:00 - Hazlo con terminos.php y 404.php
 2026-02-25 18:03:54 - Ahora quiero que traduzcas los languages es.json al euskera en eu.json
-2026-02-25 18:22:05 - �Por qu� en enlaces_menu.php no me coge la variable  que he definido en _global/es.json si en index.php hago un json_decode de este?
-2026-02-25 19:14:10 - Al igual que en enlaces_menu.php he creado las variables ruta_inicio y menu_inicio que he incluido en el es.json de _global. Variabilizame el texto un las urls de los archivos de includes y a�adelos a es.json.
+2026-02-25 18:22:05 - �Por qu� en enlaces_menu.php no me coge la variable  que he definido en _global/es.json si en index.php hago un json_decode de este?
+2026-02-25 19:14:10 - Al igual que en enlaces_menu.php he creado las variables ruta_inicio y menu_inicio que he incluido en el es.json de _global. Variabilizame el texto un las urls de los archivos de includes y a�adelos a es.json.
 2026-02-25 19:18:03 - Ahora traducemelo a euskera en eu.json
+2026-03-04 19:09:57 - En templates/artForm02.html cambia los colores por los que utilizo en config.scss para que sea m�s acorde al branding.2026-03-06 00:00:00 - Añademe a esta vista los metadatos para las redes sociales.
+2026-03-06 00:00:01 - Variabilizame las imágenes, alt, site_name y añadelos en languages la carpeta inicio y al idioma correspondiente.
+2026-03-06 00:00:02 - Por favor ordena las variables del json según orden del DOM
+2026-03-06 00:00:03 - Ahora quiero que hagas lo mismo con el resto de vistas, es decir, crea los metadatos para las redes sociales, variabilizando las imágenes, alt y site_name, e incluyendolo en su json de idiomas correspondientes dentro de la carpeta language y la carpeta de la vista. Por favor, también mantén el orden de las variables del DOM.
